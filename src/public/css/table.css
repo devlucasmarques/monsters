@@ -1,0 +1,45 @@
+th,
+td {
+    border: 1px solid white;
+    padding: 5px;
+    
+}
+
+th {
+    color: black;
+    
+}
+
+td {
+    color: lightsalmon;
+    cursor: pointer;
+}
+
+.tbHead {
+    background-color: gray;
+}
+.tbBody {
+    color: gray;
+}
+
+div {
+    color: white;
+}
+
+table {
+    height: 350px;
+    margin-bottom: 0px;
+    display: block;
+}
+.divTable {
+    margin-top: 10px;
+    overflow-y: scroll;
+    height: 350px;
+}
+.containerTable {
+    display: flex;
+}  
+.select {
+    background-color: limegreen;
+    color: black;
+}

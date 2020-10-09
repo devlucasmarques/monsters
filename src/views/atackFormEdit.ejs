@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/general.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="/css/forms.css" />
+
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menuBar">
+            <a class="menuItem" href='#'>Testar Jogo</a>
+            <a class="menuItem ml-5" href='../atacks'>Ataques</a>
+            <a class="menuItem ml-5" href='#'>Monstros</a>
+            <a class="menuItem ml-5" href='../players'>Players</a>
+            <a class="menuItem ml-5" href='/'>Sair</a>
+        </div>
+    </div>
+    <form action="/atacks/update/<%=atack._id%>" method="POST">
+        <h1 class="formTitle">Alterar ataque</h1>
+        <div class="">
+            <input type="text" class="txt" placeholder="nome do ataque" name="name" value="<%=atack.name%>"> 
+        </div>
+        <div class="">
+            <select type="" class="txt" name="type" >
+                <option value="0" <%=atack.type == 0?'selected':''%>>normal</option>
+                <option value="1" <%=atack.type == 1?'selected':''%>>água</option>
+                <option value="2" <%=atack.type == 2?'selected':''%>>fogo</option>
+                <option value="3" <%=atack.type == 3?'selected':''%>>elétrico</option>
+                <option value="4" <%=atack.type == 4?'selected':''%>>gelo</option>
+            </select>
+        </div>
+        <div class="">
+            <input type="" class="txt" placeholder="dano" name="damage" value="<%=atack.damage%>">
+        </div>
+        <div class="">
+            <input type="text" class="txt" placeholder="energia" name="energy" value="<%=atack.energy%>">
+        </div>
+        <div>
+            <button class="btn" type="submit">Editar</button>
+        </div>
+    </form>
+</body>
+
+
+</html>

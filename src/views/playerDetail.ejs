@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/general.css">
+    <link rel="stylesheet" type="text/css" href="../css/forms.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
+
+    <title>Document</title>
+
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menuBar">
+            <a class="menuItem" href='#'>Testar Jogo</a>
+            <a class="menuItem ml-5" href='../atacks'>Ataques</a>
+            <a class="menuItem ml-5" href='../monsters'>Monstros</a>
+            <a class="menuItem ml-5" href='../players'>Players</a>
+            <a class="menuItem ml-5" href='/'>Sair</a>
+        </div>
+        <div class="main">
+            <div class="info"> <span>nickname: </span><%=player.name%></div>
+            <div class="info"> <span>username: </span><%=player.username%></div>
+            <div class="info"> <span>vitórias: </span><%=player.numberVictory%></div>
+            <div class="info"> <span>dinheiro: </span><%=player.money%></div>
+            <div class="info mb-10"> <span>rubi: </span><%=player.ruby%></div>
+
+            <div class="containerTable">
+                <table class="tbMonster">
+                    <tr class="tbHead">
+                        <th> Monster </th>
+                        <th> Nivel </th>
+                        <th> Vida </th>
+                        <th> Energia </th>
+                    </tr>
+                    <% 
+                    for (let i = 0; i < player.monsters.length; i++) { 
+                        const atacks = player.monsters[i].atacks.map(e => e.name);
+                        %>
+                        <tr onclick="select('<%=atacks%>', '<%=i%>', 2)">
+                            <td class="item<%=i%> <%=i==0?'select':''%>"> <%=player.monsters[i].name%> </td>
+                            <td class="item<%=i%> <%=i==0?'select':''%>"> <%=player.monsters[i].level%> </td>
+                            <td class="item<%=i%> <%=i==0?'select':''%>"> <%=player.monsters[i].life%> </td>
+                            <td class="item<%=i%> <%=i==0?'select':''%>"> <%=player.monsters[i].energy%> </td>
+                        </tr>            
+                    <% } %>        
+                </table>
+                <table class="ml-5" id="tbAtack">
+                    <tr class="tbHead">
+                        <th>Ataques</th>
+                    </tr>
+                    <tr>
+                        <td>soco</td>
+                    </tr>
+                </table>    
+                <table class="ml-5">
+                    <tr class="tbHead">
+                        <th> Bau </th>
+                        <th> Estado </th>
+                    </tr>
+                    <tr>
+                        <% for (let i = 0; i < player.chest.length; i ++) { %>
+                            <td> <%=player.chest[i].name%> </td>
+                            <td> <%=player.chest[i].state%> </td>
+                        <% } %>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function select(atacks, selItem, monsterLength) {
+        atacks = atacks.split(',');
+        console.log(atacks);
+
+        const tbAtack = document.getElementById('tbAtack');
+        let sAtack = '<tr class="tbHead">';
+        
+        sAtack += '<th>Ataques</th>';
+        sAtack += '</tr>';
+        atacks.forEach(at => {
+            sAtack += '<tr>';
+            sAtack += `<td>${at}</td>`;
+            sAtack += '</tr>';
+        });
+        tbAtack.innerHTML = sAtack;
+
+        for (let m = 0; m < monsterLength; m++) {
+            const items = document.getElementsByClassName(`item${m}`);
+            for (let i = 0; i < items.length; i++) {
+                if (m == selItem) items[i].classList.add('select');
+                else items[i].classList.remove('select');
+            }
+        }
+    }
+</script>
+
+
+</html>

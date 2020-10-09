@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/general.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="/css/forms.css" />
+
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menuBar">
+            <a class="menuItem" href='#'>Testar Jogo</a>
+            <a class="menuItem ml-5" href='../atacks'>Ataques</a>
+            <a class="menuItem ml-5" href='../monsters'>Monstros</a>
+            <a class="menuItem ml-5" href='../players'>Players</a>
+            <a class="menuItem ml-5" href='/'>Sair</a>
+        </div>
+    </div>
+    <form action="/monsters" method="POST">
+        <h1 class="formTitle">Novo monstro</h1>
+        <div class="">
+            <input type="text" class="txt" placeholder="nome do monstro" name="name">
+        </div>
+        <div class="">
+            <select type="" class="txt" name="type">
+                <option value="0">normal</option>
+                <option value="1">água</option>
+                <option value="2">fogo</option>
+                <option value="3">elétrico</option>
+                <option value="4">gelo</option>
+            </select>
+        </div>
+        <div class="">
+            <input type="" class="txt" placeholder="ataque" name="atack">
+        </div>
+        <div class="">
+            <input type="text" class="txt" placeholder="defesa" name="defense">
+        </div>
+        <div>
+            <button class="btn" type="submit">Cadastrar</button>
+        </div>
+    </form>
+</body>
+
+
+</html>

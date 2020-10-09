@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/forms.css">
+    <title>Monsters Game</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <% if(error !== '') { %> 
+    <div class="error"><%=error%></div>
+    <% } %>
+    <form action="/players/auth" method="POST">
+        <h1 class="formTitle">Login</h1>
+        <div class="">
+            <input class="txt" type="text" placeholder="username" name="username">
+        </div>
+        <div class="txt">
+            <input type="password" placeholder="password" name="password">
+        </div>
+        <div>
+            <button class="btn" type="submit">Entrar</button>
+        </div>
+        <div class="note">
+            Não tenho conta.
+            <a class="link" href='/players/formNew'>Cadastrar?</a>
+        </div>
+    </form>
+</body>
+
+</html>
